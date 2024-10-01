@@ -49,7 +49,3 @@ public class RentalCarCalculator {
         System.out.printf("\nTotal Cost:               $%.2f" , (age < 25)? ((basicCarRental + (basicCarRental * surcharge) + optionsCost)) : (basicCarRental + optionsCost));
     }
 }
-// Rent      $59.98
-// Options   $5.90
-// Underage  $17.994
-// Total:    $83.87
