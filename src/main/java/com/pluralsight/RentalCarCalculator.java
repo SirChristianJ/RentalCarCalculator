@@ -20,7 +20,7 @@ public class RentalCarCalculator {
         int userAge = promptUserNumeric("Enter your age: ");
         int numberOfDaysRenting = promptUserNumeric("How many days do you plan on renting for? ");
         System.out.println("--------------------------------------------------------------------------------------------");
-        displayAndCalculate(rentalPrice,userAge,runningTotal, numberOfDaysRenting);
+        displayAndCalculate(rentalPrice*numberOfDaysRenting,userAge,runningTotal, numberOfDaysRenting);
     }
 
     public static double handleOptionCost(String userChoice, double costOfOption){
@@ -46,6 +46,10 @@ public class RentalCarCalculator {
         System.out.printf("Basic car rental price:   $%.2f" , basicCarRental);
         System.out.println("\nUnderage driver surcharge: " + ((age < 25)?30:0) + "%");
         System.out.printf("\nOptions cost:             $%.2f" , optionsCost);
-        System.out.printf("\nTotal Cost:               $%.2f" , (age < 25)? ((basicCarRental + (basicCarRental * surcharge) + optionsCost) * rentalDays) : (basicCarRental + optionsCost) * rentalDays);
+        System.out.printf("\nTotal Cost:               $%.2f" , (age < 25)? ((basicCarRental + (basicCarRental * surcharge) + optionsCost)) : (basicCarRental + optionsCost));
     }
 }
+// Rent      $59.98
+// Options   $5.90
+// Underage  $17.994
+// Total:    $83.87
